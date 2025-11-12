@@ -1,15 +1,16 @@
 import os
 import sys
 
-current_dir=os.path.dirname(os.path.abspath(__file__))
-srs_path=os.path.join(current_dir,'srs')
-sys.path.append(srs_path)
+# Get the current directory path
+current_dir = os.path.dirname(os.path.abspath(__file__))
 
-from srs.math_utils import ipaddress
+# Add the 'src' directory to the Python path (change to 'srs' if that's your folder name)
+src_path = os.path.join(current_dir, 'src')
+sys.path.append(src_path)
 
+# Import the add function
+from math_utils import add
 
-
-from src.math_utils import add
-
+# Test function
 def test_addition():
-    assert add(2,3)==5
+    assert add(2, 3) == 5
